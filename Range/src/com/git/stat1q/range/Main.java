@@ -1,24 +1,28 @@
 package com.git.stat1q.range;
 
-import java.util.Arrays;
-
-public class Main {
-
-    public void printRange (){
-
-    }
-
+class Main {
     public static void main(String[] args) {
-        Range range = new Range(1.5, 9.9);
-        Range secondRange = new Range(1, 10);
+        Range firstRange = new Range(1.5, 99.9);
+        Range secondRange = new Range(100, 101);
 
-        System.out.println(range);
+        System.out.println("Длина интервала = " + firstRange.getRangeLength());
+        System.out.println("Число входит в интервал?  " + firstRange.isInside(5));
 
-        System.out.println("Длина интервала = " + range.getRangeLength());
-        System.out.println("Число входит в интервал?  " + range.isInside(5));
-        System.out.println("Интервал-пересечения - " + range.getIntersectionRange(secondRange));
-        System.out.println("Объединенный интервал - " + range.merge(secondRange));
-        System.out.println("Разность интервалов - " + range.getRangeDiff(secondRange));
+        Range intersection = firstRange.getIntersectionRange(secondRange);
+        if (intersection == null) {
+            System.out.println("Пересечения нет.");
+        } else {
+            System.out.println("Интервал-пересечения - " + intersection.getFrom() + " ... " + intersection.getTo());
+        }
 
+        System.out.print("Объединенный интервал - ");
+        for (Range e : firstRange.merge(secondRange)) {
+            System.out.println(e.getFrom() + " ... " + e.getTo());
+        }
+
+        System.out.print("Разность интервалов - ");
+        for (Range e : firstRange.getRangeDiff(secondRange)) {
+            System.out.println(e.getFrom() + " ... " + e.getTo());
+        }
     }
 }
