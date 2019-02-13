@@ -4,8 +4,8 @@ import com.git.stat1q.range.Range;
 
 public class Main {
     public static void main(String[] args) {
-        Range firstRange = new Range(1.5, 99.9);
-        Range secondRange = new Range(100, 101);
+        Range firstRange = new Range(5, 20);
+        Range secondRange = new Range(8, 9);
 
         System.out.println("Длина интервала = " + firstRange.getLength());
         System.out.println("Число входит в интервал?  " + firstRange.isInside(5));

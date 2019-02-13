@@ -45,21 +45,19 @@ public class Range {
         if (from > secondRange.to || secondRange.from > to) {
             return new Range[]{new Range(from, to), new Range(secondRange.from, secondRange.to)};
         } else {
-            return new Range[]{new Range(Math.max(to, secondRange.to), Math.min(from, secondRange.from))};
+            return new Range[]{new Range(Math.min(from, secondRange.from), Math.max(to, secondRange.to))};
         }
     }
 
     public Range[] getDiff(Range secondRange) {
-        if (secondRange.from <= to && secondRange.to >= to) {
-            return new Range[]{new Range(from, secondRange.from)};
-        } else if (secondRange.to >= from && secondRange.from < to) {
-            return new Range[]{new Range(secondRange.to, to)};
-        } else if (secondRange.from <= from && secondRange.to >= to) {
-            return new Range[0];
-        } else if (secondRange.from > from && secondRange.to < to) {
-            return new Range[]{new Range(from, secondRange.from), new Range(secondRange.to, to)};
-        } else {
+        if (secondRange.from > to || secondRange.to < from || (secondRange.from <= from && secondRange.to >= to)) {
             return new Range[]{new Range(from, to)};
+        } else if (secondRange.from >= from && secondRange.to > to) {
+            return new Range[]{new Range(from, secondRange.from)};
+        } else if (secondRange.from < from && secondRange.to <= to) {
+            return new Range[]{new Range(secondRange.to, to)};
+        } else {
+            return new Range[]{new Range(from, secondRange.from), new Range(secondRange.to, to)};
         }
     }
 }
