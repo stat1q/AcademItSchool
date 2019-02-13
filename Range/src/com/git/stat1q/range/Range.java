@@ -1,39 +1,39 @@
 package com.git.stat1q.range;
 
-class Range {
+public class Range {
     private double from;
     private double to;
 
-    Range(double from, double to) {
+    public Range(double from, double to) {
         this.from = from;
         this.to = to;
     }
 
-    double getRangeLength() {
+    public double getLength() {
         return to - from;
     }
 
-    double getFrom() {
+    public double getFrom() {
         return from;
     }
 
-    double getTo() {
+    public double getTo() {
         return to;
     }
 
- /*   void setFrom(double from) {
+    public void setFrom(double from) {
         this.from = from;
     }
 
-    void setTo(double to) {
+    public void setTo(double to) {
         this.to = to;
-    }*/
+    }
 
-    boolean isInside(double number) {
+    public boolean isInside(double number) {
         return number >= from && number <= to;
     }
 
-    Range getIntersectionRange(Range secondRange) {
+    public Range getIntersection(Range secondRange) {
         if (from >= secondRange.to || secondRange.from >= to) {
             return null;
         } else {
@@ -41,7 +41,7 @@ class Range {
         }
     }
 
-    Range[] merge(Range secondRange) {
+    public Range[] merge(Range secondRange) {
         if (from > secondRange.to || secondRange.from > to) {
             return new Range[]{new Range(from, to), new Range(secondRange.from, secondRange.to)};
         } else {
@@ -49,7 +49,7 @@ class Range {
         }
     }
 
-    Range[] getRangeDiff(Range secondRange) {
+    public Range[] getDiff(Range secondRange) {
         if (secondRange.from <= to && secondRange.to >= to) {
             return new Range[]{new Range(from, secondRange.from)};
         } else if (secondRange.to >= from && secondRange.from < to) {
