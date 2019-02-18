@@ -50,11 +50,13 @@ public class Range {
     }
 
     public Range[] getDiff(Range secondRange) {
-        if (secondRange.from > to || secondRange.to < from || (secondRange.from <= from && secondRange.to >= to)) {
+        if (secondRange.from > to || secondRange.to < from) {
             return new Range[]{new Range(from, to)};
-        } else if (secondRange.from >= from && secondRange.to > to) {
+        } else if (secondRange.from <= from && secondRange.to >= to) {
+            return new Range[0];
+        } else if (secondRange.from >= from && secondRange.to >= to) {
             return new Range[]{new Range(from, secondRange.from)};
-        } else if (secondRange.from < from && secondRange.to <= to) {
+        } else if (secondRange.from <= from && secondRange.to <= to) {
             return new Range[]{new Range(secondRange.to, to)};
         } else {
             return new Range[]{new Range(from, secondRange.from), new Range(secondRange.to, to)};
