@@ -41,5 +41,35 @@ public class Triangle extends Shapes {
         return getSideLength(x1, y1, x2, y2) + getSideLength(x2, y2, x3, y3) + getSideLength(x3, y3, x1, y1);
     }
 
+    @Override
+    public String toString() {
+        return String.format("треугольник с вершинами: (x1=%.1f; y1=%.1f); (x2=%.1f; y2=%.1f); (x3=%.1f; y3=%.1f), площадью = %.2f, периметром = %.2f", x1, y1, x2, y2, x3, y3, getArea(), getPerimeter());
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
+        }
+        Triangle triangle = (Triangle) o;
+        return triangle.x1 == x1 && triangle.y1 == y1 &&
+                triangle.x2 == x2 && triangle.y2 == y2 &&
+                triangle.x3 == x3 && triangle.y3 == y3;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 37;
+        int hash = 1;
+        hash = PRIME * hash + (int) x1;
+        hash = PRIME * hash + (int) x2;
+        hash = PRIME * hash + (int) x3;
+        hash = PRIME * hash + (int) y1;
+        hash = PRIME * hash + (int) y2;
+        hash = PRIME * hash + (int) y3;
+        return hash;
+    }
 }
