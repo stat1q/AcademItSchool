@@ -9,7 +9,7 @@ public class Main {
         Shape[] shapes = {
                 new Square(20),
                 new Rectangle(5, 8),
-                new Triangle(0, 0, 2, 3, 9, 6),
+                new Triangle(0, 0, 10, 9, 20, 30),
                 new Circle(7),
                 new Square(7),
                 new Rectangle(4, 6),
@@ -26,7 +26,7 @@ public class Main {
     }
 
     private static Shape getSecondMaxPerimeterShape(Shape[] shapes) {
-        Arrays.sort(shapes, new AreaComparator());
+        Arrays.sort(shapes, new PerimeterComparator());
         return shapes[shapes.length - 2];
     }
 }

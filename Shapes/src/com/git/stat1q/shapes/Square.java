@@ -29,7 +29,7 @@ public class Square implements Shape {
 
     @Override
     public String toString() {
-        return String.format("квадрат со стороной %.1f, площадью = %.2f, периметром = %.2f.", side, getArea(), getPerimeter());
+        return String.format("квадрат со стороной %.1f, площадью = %.2f, периметром = %.2f.", getWidth(), getArea(), getPerimeter());
     }
 
     @Override
