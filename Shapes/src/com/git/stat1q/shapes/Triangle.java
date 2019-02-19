@@ -1,6 +1,6 @@
 package com.git.stat1q.shapes;
 
-public class Triangle extends Shapes {
+public class Triangle implements Shape {
     private double x1;
     private double y1;
     private double x2;
@@ -62,14 +62,14 @@ public class Triangle extends Shapes {
 
     @Override
     public int hashCode() {
-        final int PRIME = 37;
+        final int prime = 37;
         int hash = 1;
-        hash = PRIME * hash + (int) x1;
-        hash = PRIME * hash + (int) x2;
-        hash = PRIME * hash + (int) x3;
-        hash = PRIME * hash + (int) y1;
-        hash = PRIME * hash + (int) y2;
-        hash = PRIME * hash + (int) y3;
-        return hash;
+        hash = prime * hash + (int) x1;
+        hash = prime * hash + (int) x2;
+        hash = prime * hash + (int) x3;
+        hash = prime * hash + (int) y1;
+        hash = prime * hash + (int) y2;
+        hash = prime * hash + (int) y3;
+        return Double.hashCode(hash);
     }
 }

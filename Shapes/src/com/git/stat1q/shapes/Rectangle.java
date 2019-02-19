@@ -1,31 +1,31 @@
 package com.git.stat1q.shapes;
 
-public class Rectangle extends Shapes{
+public class Rectangle implements Shape {
     private double width;
     private double height;
 
-    public Rectangle (double width, double height){
+    public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
 
     @Override
-    public double getWidth(){
+    public double getWidth() {
         return width;
     }
 
     @Override
-    public double getHeight(){
+    public double getHeight() {
         return height;
     }
 
     @Override
-    public double getArea(){
-        return width*height;
+    public double getArea() {
+        return width * height;
     }
 
     @Override
-    public double getPerimeter(){
+    public double getPerimeter() {
         return 2 * (width + height);
     }
 
@@ -48,10 +48,10 @@ public class Rectangle extends Shapes{
 
     @Override
     public int hashCode() {
-        final int PRIME = 37;
+        final int prime = 37;
         int hash = 1;
-        hash = PRIME * hash + (int) height;
-        hash = PRIME * hash + (int) width;
-        return hash;
+        hash = prime * hash + (int) height;
+        hash = prime * hash + (int) width;
+        return Double.hashCode(hash);
     }
 }

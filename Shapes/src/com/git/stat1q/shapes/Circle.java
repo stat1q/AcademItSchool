@@ -1,6 +1,6 @@
 package com.git.stat1q.shapes;
 
-public class Circle extends Shapes {
+public class Circle implements Shape {
     private double radius;
 
     public Circle(double radius) {
@@ -46,9 +46,8 @@ public class Circle extends Shapes {
 
     @Override
     public int hashCode() {
-        final int PRIME = 37;
+        final int prime = 37;
         int hash = 1;
-        hash = PRIME * hash + (int) radius;
-        return hash;
+        return Double.hashCode(prime * hash + (int) radius);
     }
 }

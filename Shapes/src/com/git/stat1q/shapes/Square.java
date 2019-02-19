@@ -1,6 +1,6 @@
 package com.git.stat1q.shapes;
 
-public class Square extends Shapes {
+public class Square implements Shape {
     private double side;
 
     public Square(double side) {
@@ -46,9 +46,8 @@ public class Square extends Shapes {
 
     @Override
     public int hashCode() {
-        final int PRIME = 37;
+        final int prime = 37;
         int hash = 1;
-        hash = PRIME * hash + (int) side;
-        return hash;
+        return Double.hashCode(prime * hash + (int) side);
     }
 }

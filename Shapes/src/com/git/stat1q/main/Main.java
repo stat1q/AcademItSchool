@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Shapes[] shapes = {
+        Shape[] shapes = {
                 new Square(20),
                 new Rectangle(5, 8),
                 new Triangle(0, 0, 2, 3, 9, 6),
@@ -16,16 +16,16 @@ public class Main {
                 new Triangle(0, 0, 4, 3, 5, 4),
                 new Circle(6)
         };
-        System.out.println("Фигура с максимальной площадью - это " + getMaxArea(shapes));
-        System.out.print("Фигура со вторым по величине периметром - это " + getSecondMaxPerimeter(shapes));
+        System.out.println("Фигура с максимальной площадью - это " + getMaxAreaShape(shapes));
+        System.out.print("Фигура со вторым по величине периметром - это " + getSecondMaxPerimeterShape(shapes));
     }
 
-    private static Shapes getMaxArea(Shapes []shapes) {
+    private static Shape getMaxAreaShape(Shape[] shapes) {
         Arrays.sort(shapes, new AreaComparator());
         return shapes[shapes.length - 1];
     }
 
-    private static Shapes getSecondMaxPerimeter(Shapes []shapes) {
+    private static Shape getSecondMaxPerimeterShape(Shape[] shapes) {
         Arrays.sort(shapes, new AreaComparator());
         return shapes[shapes.length - 2];
     }
