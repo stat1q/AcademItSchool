@@ -48,6 +48,6 @@ public class Square implements Shape {
     public int hashCode() {
         final int prime = 37;
         int hash = 1;
-        return Double.hashCode(prime * hash + (int) side);
+        return Double.hashCode(prime * hash + side);
     }
 }
