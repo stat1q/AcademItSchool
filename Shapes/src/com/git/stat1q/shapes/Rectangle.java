@@ -50,8 +50,8 @@ public class Rectangle implements Shape {
     public int hashCode() {
         final int prime = 37;
         int hash = 1;
-        hash = prime * hash + (int) height;
-        hash = prime * hash + (int) width;
-        return Double.hashCode(hash);
+        hash = Double.hashCode(prime * hash + height);
+        hash = Double.hashCode(prime * hash + width);
+        return hash;
     }
 }

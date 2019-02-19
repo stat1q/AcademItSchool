@@ -64,12 +64,12 @@ public class Triangle implements Shape {
     public int hashCode() {
         final int prime = 37;
         int hash = 1;
-        hash = prime * hash + (int) x1;
-        hash = prime * hash + (int) x2;
-        hash = prime * hash + (int) x3;
-        hash = prime * hash + (int) y1;
-        hash = prime * hash + (int) y2;
-        hash = prime * hash + (int) y3;
-        return Double.hashCode(hash);
+        hash = Double.hashCode(prime * hash + x1);
+        hash = Double.hashCode(prime * hash + x2);
+        hash = Double.hashCode(prime * hash + x3);
+        hash = Double.hashCode(prime * hash + y1);
+        hash = Double.hashCode(prime * hash + y2);
+        hash = Double.hashCode(prime * hash + y3);
+        return hash;
     }
 }
