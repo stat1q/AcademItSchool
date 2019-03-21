@@ -22,8 +22,8 @@ public class Main {
 
         double scalar = 3.2;
 
-        System.out.printf("Умножение на скаляр: %s%n", vector.multiplicationScalar(scalar));
-        System.out.printf("Разворот вектора: %s%n", vector.reverseVector());
+        System.out.printf("Умножение на скаляр: %s%n", vector.scalarMultiplication(scalar));
+        System.out.printf("Разворот вектора: %s%n", vector.reverse());
 
         int indexComponent = 3;
         double component = 55;
@@ -35,7 +35,7 @@ public class Main {
         System.out.println("Равны ливектора? %" + vector.equals(vector2));
         System.out.printf("Сумма векторов(static): %s%n", Vector.getSum(vector, vector2));
         System.out.printf("Разность векторов(static): %s%n", Vector.getDiff(vector, vector2));
-        System.out.printf("Скалярное произведение векторов(static): %.1f%n", Vector.multiplicationVector(vector, vector2));
+        System.out.printf("Скалярное произведение векторов(static): %.1f%n", Vector.scalarVectorsMultiplication(vector, vector2));
         System.out.printf("Длинна вектора = %.2f", vector.getLength());
     }
 }
