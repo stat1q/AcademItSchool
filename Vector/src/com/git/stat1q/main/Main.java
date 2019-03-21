@@ -22,7 +22,7 @@ public class Main {
 
         double scalar = 3.2;
 
-        System.out.printf("Умножение на скаляр: %s%n", vector.multiplyScalar(scalar));
+        System.out.printf("Умножение на скаляр: %s%n", vector.multiplyOnScalar(scalar));
         System.out.printf("Разворот вектора: %s%n", vector.reverse());
 
         int indexComponent = 3;

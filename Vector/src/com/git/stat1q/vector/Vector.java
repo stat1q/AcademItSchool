@@ -74,7 +74,7 @@ public class Vector {
         return this;
     }
 
-    public Vector multiplyScalar(double scalar) {
+    public Vector multiplyOnScalar(double scalar) {
         for (int i = 0; i < getSize(); ++i) {
             components[i] *= scalar;
         }
@@ -83,7 +83,7 @@ public class Vector {
 
     public Vector reverse() {
         double reverse = -1;
-        return this.multiplyScalar(reverse);
+        return this.multiplyOnScalar(reverse);
     }
 
     public void setComponent(int i, double component) {
