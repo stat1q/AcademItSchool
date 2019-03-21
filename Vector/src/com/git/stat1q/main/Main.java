@@ -32,7 +32,7 @@ public class Main {
 
         vector.setComponent(indexComponent, component);
         System.out.printf("Заменена компонента под индексом №%d на компоненту %.1f   %s%n", indexComponent, component, vector);
-        System.out.println("Равны ливектора? %" + vector.equals(vector2));
+        System.out.println("Равны ли вектора? " + vector.equals(vector2));
         System.out.printf("Сумма векторов(static): %s%n", Vector.getSum(vector, vector2));
         System.out.printf("Разность векторов(static): %s%n", Vector.getDiff(vector, vector2));
         System.out.printf("Скалярное произведение векторов(static): %.1f%n", Vector.scalarVectorsMultiplication(vector, vector2));
